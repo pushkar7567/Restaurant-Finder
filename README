@@ -1,0 +1,22 @@
+Name: Pushkar Sabharwal
+ID: 1588927
+CMPUT 275 Wi19
+
+Weekly Exercise #4: Dynamic Hashing
+
+Included Files: 
+	*exercise4.cpp
+	*hashtable.h
+	*linkedlist.h
+	*Makefile
+	*README
+
+Notes and assumptions:
+  I used the files given on eclass under weekly exercise section from "starter code" as a starting point as indicated in the exercise description. It is assumed hashtable.h, linkedlist.h, exercise4.cpp, Makefile are in the same directory while running the code. 
+
+Running instructions:
+  1. While in the folder containing file exercise4.cpp type "make". This creates exercise4.o, exercise4 (executable file).
+  2. After it comples, you will be allowed to insert, remove, search for nodes in the dynamic hashtable.
+
+Notes:
+  The hashtable.h file contains 2 classes namely, HashTableIterator class which contains all the variables and the functions which are used to iterate over the hash table. HashTable class contains all the variables and methods which are used to create a hash table, insert, remove, and search for values. I have implmented two function resize() and getNewBucket(). resize() function implements dynamic hashing for the hashtable. getNewBucket() gets the bucket number for the given element for the newTable. Rest of the functions were taken from stater code under weekly exercise 4 section on eclass.
