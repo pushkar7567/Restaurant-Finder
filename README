@@ -1,22 +1,52 @@
-Name: Pushkar Sabharwal
-ID: 1588927
-CMPUT 275 Wi19
+//------------------------------------------------------
+// Names: Amro Amanuddein and Pushkar Sabharwal
+// ID's: 1572498 (Amro) 1588927 (Pushkar) 
+// CMPUT275, Winter 2020
+// 
+// Assignment 1 Part 2: Restaurant Finder
+//------------------------------------------------------
 
-Weekly Exercise #4: Dynamic Hashing
+Description: The second part of this assignment involves the use of the joystick to move the cursor around the map displayed on the TFT Display, you can also view which restaurants are near you in Mode 1 and find out exactly where they are on the map. Moreover, there are now two buttons, one on the top right and one on the bottom right of the screen. These will restrict the restaurant choices depending on the rating the top right button displays and the sorting algorithm will change depending on the bottom right button.
 
-Included Files: 
-	*exercise4.cpp
-	*hashtable.h
-	*linkedlist.h
-	*Makefile
-	*README
+Included files in this submission are:
+- a1part2.cpp
+- README
+- Makefile
+- lcd_image.cpp
+- lcd_image.h
+- restaurant.cpp
+- restaurant.h
+- yegmap.cpp
+- yegmap.h
 
-Notes and assumptions:
-  I used the files given on eclass under weekly exercise section from "starter code" as a starting point as indicated in the exercise description. It is assumed hashtable.h, linkedlist.h, exercise4.cpp, Makefile are in the same directory while running the code. 
 
-Running instructions:
-  1. While in the folder containing file exercise4.cpp type "make". This creates exercise4.o, exercise4 (executable file).
-  2. After it comples, you will be allowed to insert, remove, search for nodes in the dynamic hashtable.
+Required Components:
+- 1 x LCD Screen
+- 1 x Arduino MEGA 2560 Board
+- 1 x Arduino USB cable
+- 5 x Jumper Wires
+- 1 x Joystick 
 
-Notes:
-  The hashtable.h file contains 2 classes namely, HashTableIterator class which contains all the variables and the functions which are used to iterate over the hash table. HashTable class contains all the variables and methods which are used to create a hash table, insert, remove, and search for values. I have implmented two function resize() and getNewBucket(). resize() function implements dynamic hashing for the hashtable. getNewBucket() gets the bucket number for the given element for the newTable. Rest of the functions were taken from stater code under weekly exercise 4 section on eclass.
+Wiring Instructions:
+Arduino Analog Pin A8 <--> Joystick VRy (bend wire)
+Arduino Analog Pin A9 <--> Joystick VRx (bend wire)
+Arduino Digital Pin 53 <--> Joystick SW 
+Arduino GND <--> Joystick GND
+Arduino 5V <--> Joystick 5V
+Arduino <--> LCD Screen
+
+
+Running Instructions:
+1- Use the "arduino-port-select" to ensure that the connected Arduino is port 1 for both.
+2- Open the directory containing joy_cursor.cpp file in the terminal window. Use the "make upload a1part1.cpp" to upload the code to the Arduino. Once the map fully loads on the LCD screen, you are now able to use the joystick to control and move the red cursor around the map.
+3- This is mode 0, if you go over any parts of the map, a new patch will be loaded and you will be able to move around there too.
+4- If you tap on the screen, you will be able to see which restaraunts are currently on the same patch as the one you are on and they will be 
+displayed as black dots.
+5- To enter Mode1, press the joystick and a screen will load with 21 of the restaraunts near you, you can use the joystick to scroll down and up the list of restaraunts, once you select the restaraunt click the joystick and the map will reload with the cursor near the selected restauraunt.
+6 - Clicking on the rating button (top left) will increment it, this will restrict which restauraunts will now appear, say for example the rating button was incremented to 4, it will only display 4 and 5 star rating restaraunts in the area. The ratings go up to 5 stars.
+7 - Clicking on the bottom right button allows you to choose which sorting algorithm you which to use: quick sort, insertion sort or both. It will also display the running time for both in the serial monitor, which you can open via the comman terminal using "serial-mon" command.
+
+References:
+- Code: Professor Zachary's uploaded code solution for part 1
+- Slides: Pointers, Struct, Recursion (recursion slides for quick sort)
+- Code: All the extra functions and algorithms from the assignment description. 
